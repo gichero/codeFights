@@ -120,3 +120,25 @@ function matrixElementsSum(matrix) {
    }
    return totalPrice;
 }
+
+//allLongestStrings
+// Given an array of strings, return another array containing all of its longest strings.
+// Example
+// For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+// allLongestStrings(inputArray) = ["aba", "vcd", "aba"].
+
+function allLongestStrings(inputArray) {
+
+   var longestLength = inputArray[0].length;
+
+   for(var i = 0; i<inputArray.length; i++){
+      if(longestLength < inputArray[i].length){
+         longestLength = inputArray[i].length;
+
+         }
+   }
+   inputArray = inputArray.filter((item)=>{
+      return item.length === longestLength;
+   });
+   return inputArray;
+}
