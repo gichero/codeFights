@@ -197,10 +197,12 @@ function commonCharacterCount(s1, s2) {
 // For n = 239017, the output should be
 // isLucky(n) = false.
 function isLucky(n){
-
+    //convert number to string and split to form an array
    n = n.toString();
 
    let half = n.length/2;
+   //substring method returns a subset of a string between one index and another, or through the end of the string.
+   //parseInt method coverts the string into a number
    let firstHalf = n.substring(0, half).split("").reduce((a,b)=>{
        return parseInt(a) + parseInt(b);
    });
@@ -208,4 +210,31 @@ function isLucky(n){
        return parseInt(a) + parseInt(b);
     });
     return firstHalf === secondHalf;
+}
+
+//sortByHeight
+// Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+// Example
+// For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
+// sortByHeight(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
+
+function sortByHeight(a) {
+
+    var arr = a;
+
+    arr = arr.filter((item)=>{
+        if(item != -1){
+            return item;
+        }
+    }).sort((a,b)=>{
+       return a - b;
+    });
+    var val = 0
+    for(var i = 0; i<a.length; i++){
+        if(a[i] != -1){
+           a[i] = arr[val];
+            val++
+           }
+    }
+   return a;
 }
