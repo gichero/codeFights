@@ -246,13 +246,19 @@ function sortByHeight(a) {
 // reverseParentheses(s) = "acbde".
 function reverseParentheses(s) {
     if(s.includes('(')){
+        //call recursion function
         return reverseParentheses(revRecur(s));
     }
+    // return s if there arn't parentheses
     return s;
 }
+//helper function
 function revRecur(s){
+    //regular expresion that finds the opening and closing parentheses within string
     let regex = /\(([^()]*)\)/i;
+    //the letters within the parentheses are picked, split to form an array, reversed and joined together getting rid of the array
     let subStr = regex.exec(s)[1];
     subStr = subStr.split("").reverse().join("");
+    //replace the string s with the new reversed substring
     return s.replace(regex, subStr);
 }
