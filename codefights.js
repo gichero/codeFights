@@ -186,11 +186,8 @@ function commonCharacterCount(s1, s2) {
 
 //isLucky
 // Ticket numbers usually consist of an even number of digits. A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.
-//
 // Given a ticket number n, determine if it's lucky or not.
-//
 // Example
-//
 // For n = 1230, the output should be
 // isLucky(n) = true;
 // For n = 239017, the output should be
@@ -216,7 +213,6 @@ function isLucky(n){
 // Example
 // For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
 // sortByHeight(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
-
 function sortByHeight(a) {
 
     var arr = a;
@@ -263,9 +259,34 @@ function revRecur(s){
     return s.replace(regex, subStr);
 }
 
-//alternatingSums
+//alternatingSums (one of the easier algorithms)
 //Several people are standing in a row and need to be divided into two teams. The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, the fourth into team 2, and so on.
 // You are given an array of positive integers - the weights of the people. Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2 after the division is complete.
 // Example
 // For a = [50, 60, 60, 45, 70], the output should be
 // alternatingSums(a) = [180, 105].
+function alternatingSums(a) {
+    let team1 = 0;
+    let team2 = 0;
+
+    for(var i = 0; i < a.length; i++){
+        if(i % 2 === 0){
+             team1 += a[i];
+        }else{
+             team2 += a[i];
+        }
+    }
+   return [team1, team2];
+}
+
+//addBorder
+// Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+// Example
+// For
+// picture = ["abc",
+//            "ded"]
+// the output should be
+// addBorder(picture) = ["*****",
+//                       "*abc*",
+//                       "*ded*",
+//                       "*****"]
