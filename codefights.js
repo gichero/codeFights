@@ -290,3 +290,36 @@ function alternatingSums(a) {
 //                       "*abc*",
 //                       "*ded*",
 //                       "*****"]
+function addBorder(picture){
+    var wallLength = picture[0].length + 2;
+    var wall = "";
+    for (var i = 0; i < wallLength; i++){
+        wall = wall.concat("*");
+    }
+    picture.unshift(wall);
+    picture.push(wall);
+    for(var j = 1; j < picture.length-1; j++){
+        picture[j] = "*".concat(picture[j],"*")
+    }
+    return picture
+}
+//solution b (not my code)
+function addBorder(picture) {
+  var len = picture.length;
+  var stringmodified = [];
+  var asterikstring = '*'.repeat(picture[0].length + 2);
+  for(var i = 0; i<len; i++){
+    stringmodified[i] = '*' + picture[i] + '*';
+  }
+  stringmodified.unshift(asterikstring);
+  stringmodified.push(asterikstring);
+
+  return stringmodified;
+
+}
+//solution c (not my code)
+function addBorder(picture) {
+    return [Array(picture[0].length+3).join('*')]
+    .concat(picture.map(r => '*'+r+'*'))
+    .concat([Array(picture[0].length+3).join('*')])
+}
