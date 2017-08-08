@@ -323,3 +323,10 @@ function addBorder(picture) {
     .concat(picture.map(r => '*'+r+'*'))
     .concat([Array(picture[0].length+3).join('*')])
 }
+//solution d (not my code)
+function addBorder(picture) {
+    picture.push('*'.repeat(picture[0].length))
+    picture.unshift('*'.repeat(picture[0].length))
+
+    return picture.map(v=>'*'+v+'*')
+}
