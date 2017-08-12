@@ -420,3 +420,23 @@ function arrayChange(inputArray) {
     }
     return increase;
 }
+
+//solution b
+function arrayChange(inputArray) {
+    let moves = 0;
+    let previousValue;
+    inputArray.forEach((val, idx) => {
+        if (idx === 0) {
+            previousValue = val;
+        }
+        else {
+            let curValue = val;
+            while (curValue <= previousValue) {
+                ++curValue;
+                ++moves;
+            }
+            previousValue = curValue;
+        }
+    });
+    return moves;
+}
