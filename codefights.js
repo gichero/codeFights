@@ -440,3 +440,15 @@ function arrayChange(inputArray) {
     });
     return moves;
 }
+
+//palindromeRearranging
+// Given a string, find out if its characters can be rearranged to form a palindrome.
+// Example
+// For inputString = "aabb", the output should be
+// palindromeRearranging(inputString) = true.
+// We can rearrange "aabb" to make "abba", which is a palindrome.
+function palindromeRearranging(inputString) {
+    var shuffled = inputString.split('').sort(function(a ,b){
+        if (){}
+    }).join('');
+}
