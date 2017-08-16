@@ -448,7 +448,28 @@ function arrayChange(inputArray) {
 // palindromeRearranging(inputString) = true.
 // We can rearrange "aabb" to make "abba", which is a palindrome.
 function palindromeRearranging(inputString) {
-    var shuffled = inputString.split('').sort(function(a ,b){
-        if (){}
-    }).join('');
+    var strObj = {};
+
+    var shuffled = inputString.split('');
+
+    for (var i = 0; i < shuffled.length; i++){
+        if (!strObj.hasOwnProperty(shuffled[i])){
+            strObj[shuffled[i]] = 1;
+        }else{
+            strObj[shuffled[i]]++;
+        }
+    }
+    var oddCount = 0;
+
+    for(item in strObj){
+        if(strObj[item] % 2 !=0){
+            oddCount++;
+        }
+    }
+    if(oddCount > 1){
+       return false;
+       }else{
+           return true;
+       }
+
 }
