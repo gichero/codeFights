@@ -473,3 +473,11 @@ function palindromeRearranging(inputString) {
        }
 
 }
+// solution b
+palindromeRearranging = s => {
+    return [...new Set(s)]
+        .map(k => s.split(k).length - 1)
+        .filter(n => n%2)
+        .length
+    < 2
+}
