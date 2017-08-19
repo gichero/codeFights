@@ -481,3 +481,43 @@ palindromeRearranging = s => {
         .length
     < 2
 }
+
+//convert arabic to roman numbers
+//edge test cases
+function toRoman(arabic) {
+
+    if(isNotNumber(arabic)) {
+        throw new TypeError("not a number");
+    }
+    if(numberLessThanOne(arabic)){
+        throw new TypeError("Number cannot be zero or less");
+    }
+    if(numberGreaterThan3999(arabic)){
+        throw new TypeError("Number cannot be more than 3999");
+    }
+
+    var romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V",   "IV", "I"];
+    var decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+
+    var romanized = "";
+
+    for (var i = 0; i < decimals.length; i++) {
+
+        while (decimals[i] <= arabic){
+            romanized += romanNumerals[i];
+            arabic -= decimals[i];
+        }
+  }
+  return romanized;
+}
+
+function isNotNumber(arabic) {
+    return typeof arabic !== "number";
+}
+
+function numberLessThanOne(arabic) {
+    return arabic <= 0;
+}
+function numberGreaterThan3999(arabic) {
+    return arabic > 3999;
+}
