@@ -543,3 +543,11 @@ function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
 
     return (myStrongest === friendsStrongest && myWeakest === friendsWeakest) ? true : false;
 }
+//solution b
+function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
+  if (yourLeft === friendsLeft && yourRight === friendsRight || yourLeft ===
+        friendsRight && friendsLeft === yourRight) {
+        return true;
+    }
+    return false;
+}
