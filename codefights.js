@@ -551,3 +551,20 @@ function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
     }
     return false;
 }
+
+//ArrayMaximalAdjacentDifference
+// Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+
+// Example
+// For inputArray = [2, 4, 1, 0], the output should be
+// arrayMaximalAdjacentDifference(inputArray) = 3.
+function arrayMaximalAdjacentDifference(inputArray) {
+    var maxDiff = Math.abs(inputArray[0] - inputArray[1]);
+
+    for(var i = 0; i < inputArray.length; i++){
+        var currDiff = Math.abs(inputArray[i-1] - inputArray[i]);
+
+        maxDiff = (maxDiff > currDiff) ? maxDiff : currDiff;
+    }
+    return maxDiff;
+}
