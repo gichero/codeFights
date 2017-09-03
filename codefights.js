@@ -619,3 +619,33 @@ function avoidObstacles(inputArray) {
     }
 
 }
+
+//BoxBlur
+// The algorithm works as follows: each pixel x in the resulting image has a value equal to the average value of the input image pixels' values from the 3 × 3 square with the center at x. All pixels at the edges are cropped.
+// As pixel's value is an integer, all fractions should be rounded down
+// Example
+// For
+// image = [[1, 1, 1],
+//          [1, 7, 1],
+//          [1, 1, 1]]
+// the output should be boxBlur(image) = [[1]].
+// In the given example all boundary pixels were cropped, and the value of the pixel in the middle was obtained as (1 + 1 + 1 + 1 + 7 + 1 + 1 + 1 + 1) / 9 = 15 / 9 = ~rounded down~ = 1.
+function boxBlur(image) {
+    var pixeled = [];
+    for(var i = 0; i < image.length - 2; i++){
+        var newArr = [];
+        for(var j = 0; j < image[i].length -2; j++){
+            var sum = 0;
+            var count = 9;
+            for(var x = i; x < i + 3; x++){
+                for(var y = j; y < j + 3; y++){
+                    sum += image[x][y];
+                }
+            }
+            newArr.push(Math.floor(sum / count));
+        }
+        pixeled.push(newArr);
+    }
+    return pixeled;
+
+}
