@@ -649,3 +649,74 @@ function boxBlur(image) {
     return pixeled;
 
 }
+
+//Minesweeper
+// In the popular Minesweeper game you have a board with some mines and those cells that don't contain a mine have a number in it that indicates the total number of mines in the neighboring cells. Starting off with some arrangement of mines we want to create a Minesweeper game setup.
+// Example
+// For
+// matrix = [[true, false, false],
+//           [false, true, false],
+//           [false, false, false]]
+// the output should be
+// minesweeper(matrix) = [[1, 2, 1],
+//                        [2, 1, 1],
+//                        [1, 1, 1]]
+
+function minesweeper(matrix) {
+
+    var matrixArr = [];
+    for(var i = 0; i < matrix.length; i++){
+        matrixArr.push([]);
+         for(var j = 0; j < matrix[i].length; j++){
+             matrixArr[i][j] = 0;
+             if(matrix[i][j-1] === true){
+                 matrixArr[i][j]++;
+             }
+             if(matrix[i][j+1] != undefined){
+                 if (matrix[i][j+1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i-1] != undefined){
+                 if (matrix[i-1][j] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i+1] != undefined){
+                 if (matrix[i+1][j] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i+1] != undefined){
+                 if (matrix[i+1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i+1] != undefined){
+                 if (matrix[i+1][j+1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i+1] != undefined){
+                 if (matrix[i+1][j-1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i-1] != undefined){
+                 if (matrix[i-1][j+1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+             if(matrix[i-1] != undefined){
+                 if (matrix[i-1][j-1] === true){
+                     matrixArr[i][j]++;
+                 }
+             }
+
+        }
+
+    }
+
+    return matrixArr;
+}
+       
