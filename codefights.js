@@ -719,4 +719,13 @@ function minesweeper(matrix) {
 
     return matrixArr;
 }
-       
+
+// Write a function that combines two lists(or arrays) by alternatingly
+// taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+var array1 = [1,2,3,4,5];
+var array2 = ['a', 'b', 'c', 'd', 'e'];
+
+var array3 = array1.map(function(element,i) {
+  return [element, array2[i]]; })
+  .reduce(function(a,b) {
+    return a.concat(b); });
