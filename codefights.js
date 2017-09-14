@@ -722,10 +722,23 @@ function minesweeper(matrix) {
 
 // Write a function that combines two lists(or arrays) by alternatingly
 // taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
-var array1 = [1,2,3,4,5];
-var array2 = ['a', 'b', 'c', 'd', 'e'];
+var array1 = [1,2,3];
+var array2 = ['a', 'b', 'c'];
 
 var array3 = array1.map(function(element,i) {
   return [element, array2[i]]; })
   .reduce(function(a,b) {
     return a.concat(b); });
+// solution using for loop
+function zip(array1, array2){
+
+  var array3 = [];
+
+for(var i = 0; i < array1.length; i++){
+
+   array3.push(array1[i]);
+   array3.push(array2[i]);
+  }
+ return array3;
+}
+zip([1,2,3],['a', 'b', 'c']);
