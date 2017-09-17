@@ -758,3 +758,15 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
     });
     return inputArray;
 }
+ //solution b
+ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
+    var arr2 = [];
+
+    for(var i = 0 ; i < inputArray.length ; i++){
+
+        if(inputArray[i] === elemToReplace) arr2[i] = substitutionElem;
+        else arr2[i] = inputArray[i];
+    }
+    return arr2;
+
+}
