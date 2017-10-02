@@ -790,3 +790,17 @@ function evenDigitsOnly(n) {
     }
     return true;
 }
+
+//solution c
+function evenDigitsOnly(n) {
+    //make n a string
+    //split n into an array
+    //loop through the array and check if there is a odd value
+    //if odd return false
+    //return true
+    n = n.toString().split('')
+    for(let i = 0; i < n.length; i++){
+        if(Number(n[i]) % 2 !== 0) return false; 
+    }
+    return true;
+}
