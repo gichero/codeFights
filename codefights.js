@@ -768,5 +768,25 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
         else arr2[i] = inputArray[i];
     }
     return arr2;
+}
 
+//EvenDigitsOnly
+function evenDigitsOnly(n) {
+    n = n.toString().split('');
+
+        return n.every(function(i){
+            return parseInt(i) % 2 === 0
+        })
+
+    }
+//solution b
+function evenDigitsOnly(n) {
+
+    n = n.toString();
+    for (var i = 0; i<n.length;i++){
+        if (parseInt(n[i])%2===1){
+            return false;
+        }
+    }
+    return true;
 }
