@@ -384,3 +384,21 @@ function variableName(name) {
 function variableName(name){
     return(name.match(/^\d|\W/g)) ? false: true;
 }
+//alphabeticShift
+//For inputString = "crazy", the output should be
+//alphabeticShift(inputString) = "dsbaz".
+function alphabeticShift(inputString) {
+    var alphabet =       ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+    inputString  = inputString.split('');
+
+    for (var i = 0; i<inputString.length; i++){
+        var indexValue = 0;
+        if (inputString[i] != 'z'){
+            indexValue = alphabet.indexOf(inputString[i]) + 1;
+            }
+        inputString[i] = alphabet[indexValue];
+    }
+    return inputString.join('');
+
+}
