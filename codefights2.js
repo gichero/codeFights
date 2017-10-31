@@ -402,3 +402,20 @@ function alphabeticShift(inputString) {
     return inputString.join('');
 
 }
+//solution b
+function alphabeticShift(inputString) {
+    let arr = inputString.split('');
+    arr = arr.map(char=>{
+        if(char == 'z') {
+            return 'a';
+        }
+        let charcode = char.charCodeAt()+1;
+        return String.fromCharCode(charcode);
+    })
+    return arr.join('');
+}
+//solution c
+function alphabeticShift(inputString) {
+   return inputString.split("").map((a,i) => a === 'z' ? 'a' : String.fromCharCode((a.charCodeAt(0) +1))).join("");
+
+}
