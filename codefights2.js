@@ -418,3 +418,30 @@ function alphabeticShift(inputString) {
 function alphabeticShift(inputString) {
    return inputString.split("").map((a,i) => a === 'z' ? 'a' : String.fromCharCode((a.charCodeAt(0) +1))).join("");
 }
+
+//chessBoardCellColor
+//Given two cells on the standard chess board, determine whether they have the same color or not.
+function chessBoardCellColor(cell1, cell2) {
+    let sum1 = Number.parseInt(cell1[1]) + (cell1.charCodeAt(0) - 64);
+    let sum2 = Number.parseInt(cell2[1]) + (cell2.charCodeAt(0) - 64);
+
+    return (sum1 % 2 === 0 && sum2 % 2 === 0) || (sum1 % 2 === 1 && sum2 % 2 === 1);
+}
+//solution b
+function chessBoardCellColor(cell1, cell2) {
+    var board = {
+        "A": 1,
+        "B": 2,
+        "C": 3,
+        "D": 4,
+        "E": 5,
+        "F": 6,
+        "G": 7,
+        "H": 8
+    };
+    var square1 = board[cell1[0]] + parseInt(cell1[1]);
+    var square2 = board[cell2[0]] + parseInt(cell2[1]);
+
+    return square1 % 2 === square2 % 2;
+
+}
