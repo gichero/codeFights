@@ -417,5 +417,4 @@ function alphabeticShift(inputString) {
 //solution c
 function alphabeticShift(inputString) {
    return inputString.split("").map((a,i) => a === 'z' ? 'a' : String.fromCharCode((a.charCodeAt(0) +1))).join("");
-
 }
