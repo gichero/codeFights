@@ -269,11 +269,8 @@ function minesweeper(matrix) {
                      matrixArr[i][j]++;
                  }
              }
-
         }
-
     }
-
     return matrixArr;
 }
 
@@ -443,5 +440,4 @@ function chessBoardCellColor(cell1, cell2) {
     var square2 = board[cell2[0]] + parseInt(cell2[1]);
 
     return square1 % 2 === square2 % 2;
-
 }
